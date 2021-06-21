@@ -1,0 +1,36 @@
+{
+  "global_encoder": {
+    "nearest_neighboors": 24,
+    "latent_dim": 1024
+  },
+  "generator": {
+    "latent_dim": 256,
+    "nearest_neighboors": 16,
+    "pool1_nn": 16,
+    "pool2_nn": 6,
+    "scoring_fun": "tanh"
+  },
+  "completion_trainer": {
+    "checkpoint_global_enco": "pretext_weights/global_contrastive/cropRotScaleJitt_4pos_1602780721.pth",
+    "checkpoint_local_enco": "pretext_weights/gpd_local_denoising/gpd_residual_nn8_mse_ep100.pth",
+    "data_root": "/home/antonioa/data/shapenetcore_partanno_segmentation_benchmark_v0",
+    "num_points": 2048,
+    "enco_lr": 10e-4,
+    "enco_step": 25,
+    "gen_lr": 10e-4,
+    "gen_step": 40
+  },
+  "GPD_local": {
+    "pre_Nfeat": [3, 33, 66, 99],
+    "conv_n_layers": 3,
+    "conv_layer": {
+      "in_feat": 99,
+      "fnet_feat": 99,
+      "out_feat": 99,
+      "rank_theta": 11,
+      "stride_th1": 33,
+      "stride_th2": 33,
+      "min_nn": 8
+    }
+  }
+}
