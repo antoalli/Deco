@@ -8,7 +8,14 @@
 **[PyTorch](https://pytorch.org)** implementation for the paper **[Denoise and Contrast for Category Agnostic Shape Completion (CVPR 2021.)](http://arxiv.org/abs/2103.16671)**. <br>
 **Repository still under construction/refactoring. In case of any issue feel free to email me at antonio.alliegro@polito.it**
 
+## Video and Poster
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6L4WfcPzsE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+You can also take a look at our **[poster](https://github.com/antoalli/Deco/blob/main/assets/deco_cvpr21_poster.pdf)**
+
 ## Dependencies
+
 * Python 3.7.9
 * CUDA 10.0
 * G++ or GCC 7.5.0.
