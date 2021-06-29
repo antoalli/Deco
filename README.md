@@ -1,19 +1,14 @@
 # DeCo: Denoise and Contrast for Category Agnostic Shape Completion
-
 <p align="center">  
 <img src="assets/teaser.png">  
-</p> 
+</p>
+
+[**5min Presentation**](https://youtu.be/6L4WfcPzsE8) | [**Poster**](https://github.com/antoalli/Deco/blob/main/assets/deco_cvpr21_poster.pdf)
 
 ## Introduction
-**[PyTorch](https://pytorch.org)** implementation for the paper **[Denoise and Contrast for Category Agnostic Shape Completion (CVPR 2021.)](http://arxiv.org/abs/2103.16671)**. <br>
-**Repository still under construction/refactoring. In case of any issue feel free to email me at antonio.alliegro@polito.it**
-
-## Video and Poster
-
-[![Watch the video](https://github.com/antoalli/Deco/blob/main/assets/video_preview.jpg)](https://youtu.be/6L4WfcPzsE8)
-
+**[PyTorch](https://pytorch.org)** implementation for the paper **[Denoise and Contrast for Category Agnostic Shape Completion (CVPR 2021.)](http://arxiv.org/abs/2103.16671)**. 
 <br>
-You can also take a look at our **[poster](https://github.com/antoalli/Deco/blob/main/assets/deco_cvpr21_poster.pdf)**
+**Repository still under construction/refactoring. In case of any issue feel free to email me at antonio.alliegro@polito.it**
 
 ## Dependencies
 
