@@ -254,5 +254,6 @@ class GPDLocalFE(nn.Module):
 
         # LAST BLOCK out_feat -> in_channels
         x3, _ = self.l_conv((h, None))  # computing graph 3
+
         return x3
 

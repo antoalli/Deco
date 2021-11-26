@@ -4,6 +4,7 @@
 @Time:
 """
 import open3d as o3  # mandatory to import (open3d 0.9.0) before torch (1.2) to avoid crash!
+silent_warn = o3
 import argparse
 import json
 import shutil
@@ -22,7 +23,7 @@ import shapenet_part_loader
 from shape_utils import random_occlude_pointcloud as crop_shape
 from utils import IOStream, safe_make_dirs
 from models.model_deco import GLEncoder as Encoder, Generator
-silent_warn = o3
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # python script folder
 
 
@@ -90,7 +91,7 @@ def main_worker():
     opt, io, tb = get_args()
     start_epoch = -1
     start_time = time.time()
-    ckt = None  # flag
+    ckt = None
     if len(opt.restart_from) > 0:
         ckt = torch.load(opt.restart_from)
         start_epoch = ckt['epoch'] - 1
@@ -176,7 +177,7 @@ def main_worker():
         generator.load_state_dict(ckt['generator_state_dict'])
         io.cprint("Whole model loaded from {}\n".format(opt.restart_from))
     else:
-        # trainingthe completion model
+        # training the completion model
         # load local and global encoder pretrained (ssl pretexts) weights
         io.cprint("Training Completion Task...")
         local_fe_fn = config['completion_trainer']['checkpoint_local_enco']
@@ -274,9 +275,13 @@ def main_worker():
             fine_gts, interm_gts = [], []
             N_partial_points = N - (crop_point_num * num_holes)
             for m in range(B):
-                partial, fine_gt, interm_gt = crop_shape(points[m], centroids=centroids,
-                                                         scales=[crop_point_num, (crop_point_num + context_point_num)],
-                                                         n_c=num_holes)
+                partial, fine_gt, interm_gt = crop_shape(
+                    points[m],
+                    centroids=centroids,
+                    scales=[crop_point_num, (crop_point_num + context_point_num)],
+                    n_c=num_holes
+                )
+
                 if partial.size(0) > N_partial_points:
                     assert num_holes > 1
                     # sampling without replacement

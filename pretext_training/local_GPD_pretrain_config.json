@@ -1,0 +1,30 @@
+{
+  "num_points": 2048,
+  "noise_mean": 0,
+  "noise_std": 0.02,
+
+  "n_block": 2,
+  "conv_n_layers": 3,
+  "pre_Nfeat": [3, 33, 66, 99],
+  "input_ch": 3,
+
+  "conv_layer": {
+    "in_feat": 99,
+    "fnet_feat": 99,
+    "out_feat": 99,
+    "rank_theta": 11,
+    "stride_th1": 33,
+    "stride_th2": 33,
+    "min_nn": 8
+    },
+
+  "lconv_layer": {
+    "in_feat": 99,
+    "fnet_feat": 99,
+    "out_feat": 3,
+    "rank_theta": 11,
+    "stride_th1": 33,
+    "stride_th2": 3,
+    "min_nn": 8
+    }
+}

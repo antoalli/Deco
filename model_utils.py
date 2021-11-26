@@ -203,6 +203,20 @@ class GlobalFeat(Mod):
             return x1
 
 
+class Projector(Mod):
+    def __init__(self, in_feat=1024, projection_dim=128):
+        super().__init__()
+        self.projector = nn.Sequential(
+            nn.Linear(in_feat, 512, bias=False),
+            nn.BatchNorm1d(512),
+            nn.ReLU(),
+            nn.Linear(512, projection_dim, bias=True)
+        )
+
+    def forward(self, x):
+        return self.projector(x)
+
+
 ###################################
 
 class LocalFeat(Mod):

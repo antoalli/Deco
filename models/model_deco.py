@@ -186,6 +186,9 @@ class Generator(Mod):
         return x.permute(0, 2, 1), x_raw.permute(0, 2, 1)
 
 
+# BELOW FOR ABLATION EXPERIMENTS
+
+
 class LocalFeat_dgcnn(Mod):
     """
     DGCNN local feature extractor: returns 64*3 per-point feature embedding
